@@ -1,0 +1,5 @@
+<h1>Pokemon</h1>
+
+<div *ngFor="let card of cards" class="listing">
+  <a href="/details/{{ card.id }}">{{ card.name }}</a>
+</div>

@@ -1,0 +1,12 @@
+<div>
+  <h1>{{ card.name }}</h1>
+  <p>
+    Rarity: {{ card.rarity }}<br />
+    Series: {{ card.series }}<br />
+    Set: {{ card.set }}<br />
+    Type: {{ card.types }}
+  </p>
+  <img src="{{ card.imageUrlHiRes }}" alt="{{ card.name }}" height="700px" />
+</div>
+
+<!-- {{ card | json }} -->
