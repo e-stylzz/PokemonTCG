@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import data from './data/Ancient_Origins.json';
 
 @Injectable({
   providedIn: 'root',
@@ -13,11 +14,7 @@ export class CardService {
   }
 
   public getCard(id: string): Observable<any> {
-    console.log('ID: ', id);
-    const cards: any = require('./data/Ancient_Origins.json');
-    console.log('cards from service: ', cards);
-    //let cards: [] = this.http.get('./assets/Ancient_Origins.json');
-    let card = cards.find((card) => card.id === id);
+    let card = data.find((card) => card.id === id);
     console.log('card from service: ', card);
     return of(card);
   }
