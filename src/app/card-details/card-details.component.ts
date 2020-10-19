@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CardService } from '../card.service';
+import { Card } from '../models/card';
 
 @Component({
   selector: 'app-card-details',
@@ -9,7 +10,7 @@ import { CardService } from '../card.service';
 })
 export class CardDetailsComponent implements OnInit {
   card_id: string;
-  card: {};
+  card: Card;
   constructor(
     private route: ActivatedRoute,
     private cardService: CardService
