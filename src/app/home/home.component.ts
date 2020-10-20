@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
-    this.cardService.getCards().subscribe((data) => {
+    this.cardService.getCharacters().subscribe((data) => {
       console.log('Cards: ', data);
       data.sort(function (a, b) {
         if (a.name < b.name) {

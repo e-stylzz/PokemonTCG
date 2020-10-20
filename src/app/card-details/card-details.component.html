@@ -1,12 +1,16 @@
 <div>
-  <h1>{{ card.name }}</h1>
+  <h1>{{ cards[0].name }}</h1>
   <p>
-    Rarity: {{ card.rarity }}<br />
-    Series: {{ card.series }}<br />
-    Set: {{ card.set }}<br />
-    Type: {{ card.types }}
+    Rarity: {{ cards[0].rarity }}<br />
+    Series: {{ cards[0].series }}<br />
+    Set: {{ cards[0].set }}<br />
+    Type: {{ cards[0].types }}
   </p>
-  <img src="{{ card.imageUrlHiRes }}" alt="{{ card.name }}" height="700px" />
+  <div id="card_holder">
+    <div *ngFor="let card of cards" class="card">
+      <img src="{{ card.imageUrl }}" alt="{{ card.name }}" />
+    </div>
+  </div>
 </div>
 
 <!-- {{ card | json }} -->

@@ -10,7 +10,7 @@ import { Card } from '../models/card';
 })
 export class CardDetailsComponent implements OnInit {
   card_id: string;
-  card: Card;
+  cards: [Card];
   constructor(
     private route: ActivatedRoute,
     private cardService: CardService
@@ -20,8 +20,8 @@ export class CardDetailsComponent implements OnInit {
     this.card_id = this.route.snapshot.paramMap.get('id');
 
     this.cardService.getCard(this.card_id).subscribe((data) => {
-      console.log('Card: ', data);
-      this.card = data;
+      console.log('Cardsssss: ', data);
+      this.cards = data;
     });
   }
 }
