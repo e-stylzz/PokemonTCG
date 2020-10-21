@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CardService } from '../card.service';
-import { Card } from '../models/card';
+import { Pokemon } from '../models/pokemon';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,13 @@ import { Card } from '../models/card';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  cards: [Card];
-  constructor(private cardService: CardService) {}
+  pokemon: Pokemon[];
+
+  constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
-    this.cardService.getCharacters().subscribe((data) => {
-      console.log('Cards: ', data);
+    this.pokemonService.getCharacters().subscribe((data) => {
+      console.log('All Pokemon: ', data);
       data.sort(function (a, b) {
         if (a.name < b.name) {
           return -1;
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
         }
         return 0;
       });
-      this.cards = data;
+      this.pokemon = data;
     });
   }
 }

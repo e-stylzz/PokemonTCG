@@ -1,10 +1,9 @@
 <div>
-  <h1>{{ cards[0].name }}</h1>
+  <h1>{{ pokemon.name }}</h1>
   <p>
-    Rarity: {{ cards[0].rarity }}<br />
-    Series: {{ cards[0].series }}<br />
-    Set: {{ cards[0].set }}<br />
-    Type: {{ cards[0].types }}
+    Height: {{ pokemon.height / 10 }} meters (m)<br />
+    Weight: {{ pokemon.weight / 10 }} kilograms (kg)<br />
+    <!-- Types: {{ pokemon.types}} -->
   </p>
   <div id="card_holder">
     <div *ngFor="let card of cards" class="card">
@@ -12,5 +11,3 @@
     </div>
   </div>
 </div>
-
-<!-- {{ card | json }} -->
